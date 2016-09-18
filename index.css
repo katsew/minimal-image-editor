@@ -1,0 +1,72 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dandd-section {
+  margin: 30px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.dandd-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -100px;
+  text-align: center;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+.l-left {
+  float: left;
+}
+.l-right {
+  float: right;
+}
+
+#previewText {
+  border-bottom: 1px solid #eee;
+}
+
+input[type=text] {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  outline: none;
+  padding-left: 3px;
+  font-size: 12px;
+}
+label {
+  display: inline-block;
+  width: 150px;
+  margin: 10px;
+}
+.is-hidden {
+  display: none;
+}
+
+.banner-text-position {
+  width: 600px;
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Minimal Image Editor</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Minimal Image Editor</h1>
+      </header>
+      <section class="dandd-section">
+        <p class="dandd-placeholder">Drag & Drop Image.</p>
+      </section>
+      <div class="clearfix">
+        <canvas class="l-left" id="c"></canvas>
+        <div class="l-right is-hidden js-text-edit">
+          <div>
+            <label>Font size</label>
+            <input id="fontSize" type="number" placeholder="Enter font-size" value="14" />
+          </div>
+          <div>
+            <label>Font color</label>
+            <input id="fontColor" type="color" placeholder="Enter color" />
+            <input id="fontColorHex" type="text" value="#000000" />
+          </div>
+          <div>
+            <label>Font face</label>
+            <input id="font" type="text" placeholder="Enter font-family" value="Helvetica" />
+          </div>
+          <div class="banner-text-position js-banner-position">
+            <label><input value="lt" type="radio" name="position" checked />Left Top</label>
+            <label><input value="ct" type="radio" name="position" />Center Top</label>
+            <label><input value="rt" type="radio" name="position" />Right Top</label>
+            <label><input value="lm" type="radio" name="position" />Left Middle</label>
+            <label><input value="cm" type="radio" name="position" />Center Middle</label>
+            <label><input value="rm" type="radio" name="position" />Right Middle</label>
+            <label><input value="lb" type="radio" name="position" />Left Bottom</label>
+            <label><input value="cb" type="radio" name="position" />Center Bottom</label>
+            <label><input value="rb" type="radio" name="position" />Right Bottom</label>
+          </div>
+          <div>
+            <label>Text Margin</label>
+            <input id="textMargin" type="number" placeholder="Enter text margin" value="0" />
+          </div>
+          <div>
+            <label>Text on image</label>
+            <input id="text" id="text" type="text" placeholder="Enter text" />
+          </div>
+          <div>
+            <button id="buttonSaveImage">Save As Image</button>
+            <img id="savedImage" src="" />
+          </div>
+        </div>
+      </div>
+      <footer></footer>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
