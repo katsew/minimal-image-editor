@@ -114,6 +114,8 @@
       ctx.canvas.height = height;
       ctx.drawImage(this, 0, 0, width, height);
       $('.js-text-edit').removeClass('is-hidden');
+      $('#danddSpace').addClass('is-hidden');
+      $('#cancelImage').removeClass('is-hidden');
     };
 
     const reader = new FileReader();
@@ -121,6 +123,15 @@
       image.src = e.target.result;
     }
     reader.readAsDataURL(file);
+  });
+
+  $('#cancelDragImageButton').on('click', function(e) {
+    e.preventDefault();
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    window.cachedImage = null;
+    $('#danddSpace').removeClass('is-hidden');
+    $('.js-text-edit').addClass('is-hidden');
+    $('#cancelImage').addClass('is-hidden');
   });
 
   $('#fontSize').on('change', function(e) {
@@ -150,9 +161,19 @@
     draw();
   });
 
+  const ipcRenderer = require('electron').ipcRenderer;
+  ipcRenderer.on('sendImageComplete', function(event, arg) {
+    console.log(event);
+    console.log(arg);
+    if (arg === true) {
+      alert('画像保存完了!');
+    } else {
+      alert('画像保存に失敗しました…');
+    }
+  });
   $('#buttonSaveImage').on('click', function(e) {
     const imgSrc = canvas.toDataURL();
-    $('#savedImage').attr('src', imgSrc);
+    ipcRenderer.send('sendImage', imgSrc.replace(/^data:image\/png;base64,/, ""));
   });
 
 })();

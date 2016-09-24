@@ -10,12 +10,17 @@
       <header>
         <h1>Minimal Image Editor</h1>
       </header>
-      <section class="dandd-section">
+      <section class="dandd-section" id="danddSpace">
         <p class="dandd-placeholder">Drag & Drop Image.</p>
       </section>
-      <div class="clearfix">
-        <canvas class="l-left" id="c"></canvas>
-        <div class="l-right is-hidden js-text-edit">
+      <section id="cancelImage" class="is-hidden">
+        <button id="cancelDragImageButton" class="btn-cancel">キャンセル</button>
+      </section>
+      <div class="clearfix content-area">
+        <div class="l-left">
+          <canvas id="c"></canvas>
+        </div>
+        <div class="l-left edit-text-area is-hidden js-text-edit">
           <div>
             <label>Font size</label>
             <input id="fontSize" type="number" placeholder="Enter font-size" value="14" />
@@ -27,9 +32,13 @@
           </div>
           <div>
             <label>Font face</label>
-            <input id="font" type="text" placeholder="Enter font-family" value="Helvetica" />
+            <select id="font">
+              <option value="Helvetica">Helvetica</option>
+              <option value="monospace">monospace</option>
+            </select>
           </div>
           <div class="banner-text-position js-banner-position">
+            <p class="banner-text-position-title">Text Position</p>
             <label><input value="lt" type="radio" name="position" checked />Left Top</label>
             <label><input value="ct" type="radio" name="position" />Center Top</label>
             <label><input value="rt" type="radio" name="position" />Right Top</label>
@@ -49,8 +58,7 @@
             <input id="text" id="text" type="text" placeholder="Enter text" />
           </div>
           <div>
-            <button id="buttonSaveImage">Save As Image</button>
-            <img id="savedImage" src="" />
+            <button class="btn-save" id="buttonSaveImage">Save As Image</button>
           </div>
         </div>
       </div>

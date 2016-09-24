@@ -13,8 +13,8 @@ body {
   background-color: #eee;
   border: 1px solid #ddd;
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   position: relative;
   top: 0;
   left: 0;
@@ -46,10 +46,6 @@ body {
   float: right;
 }
 
-#previewText {
-  border-bottom: 1px solid #eee;
-}
-
 input[type=text] {
   width: 200px;
   height: 30px;
@@ -68,5 +64,33 @@ label {
 }
 
 .banner-text-position {
-  width: 600px;
+  width: 540px;
+  font-size: 13px;
+}
+.banner-text-position-title {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.btn-cancel {
+  width: 100px;
+  height: 30px;
+  line-height: 1;
+  margin: 10px 0 20px 20px;
+}
+
+.btn-save {
+  width: 100px;
+  height: 30px;
+  line-height: 1;
+  margin: 20px;
+}
+
+.content-area {
+  width: 1000px;
+  margin: 0 auto;
+}
+.edit-text-area {
+  width: 500px;
+  margin-left: 20px;
 }
